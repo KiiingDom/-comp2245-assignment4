@@ -65,8 +65,73 @@ $superheroes = [
 
 ?>
 
+<?php 
+/*
+IDK JUST TESTING SOMETHING
 <ul>
 <?php foreach ($superheroes as $superhero): ?>
   <li><?= $superhero['alias']; ?></li>
 <?php endforeach; ?>
-</ul>
+</ul> 
+*/ 
+?>
+
+
+
+<?php
+
+function sanitization($data)
+{
+    $data = htmlspecialchars($data);
+    $data = stripslashes($data);
+    $data = trim($data);
+    return $data;
+}
+
+if($_SERVER['REQUEST_METHOD'] == 'GET')
+{
+
+    $UserInput = isset($_GET["HeroSearch"] ) ? $_GET["HeroSearch"]: '';
+    $searchQuery = sanitization($UserInput);
+
+    if(empty($searchQuery))
+{
+        echo "<h1 style=color:blue>The Hero's</h1>";
+        echo "<hr>";
+        echo "<ul>";
+        foreach ($superheroes as $superhero){
+            echo "<li>" . $superhero['name'] . "</li>";
+        }
+        echo "</ul>";
+    }
+
+    else
+{
+        $found = false;
+        foreach ($superheroes as $superhero)
+{
+            if( ($superhero['name'] == $searchQuery) || ($superhero['alias'] == $searchQuery) )
+{
+                $found = true;
+		    echo "<div id = 'result'>";
+                echo "<h1>RESULT</h1>";
+                echo "<hr>";
+                echo "<h3>" . $superhero['alias'] . "</h3>";
+                echo "<h4> A.K.A. " . $superhero['name'] . "</h4>";
+                echo "<p>" . $superhero['biography'] . "</p>";
+                break;
+		    echo "</div>";
+            }
+        }
+        if($found == false)
+{
+		echo "<div id = \result\>";
+            echo "<h1>RESULT</h1>";
+            echo "<hr>";
+            echo "<h4 style= 'font-size:25px; color: red; background-color : black;'>Sorry! Superhero not found</h4>";
+		echo "</div>";
+        
+
+    }}
+}
+ ?>

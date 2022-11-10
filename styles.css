@@ -1,0 +1,38 @@
+#HeroSearch 
+{
+height:20px;
+width:340px;
+font-size:14pt;
+padding:5px;
+}
+
+#banner 
+{  
+text-align: center;
+font-size:50px;
+background-color: deepskyblue;
+color: white;
+padding: 5px;
+}
+
+button 
+{
+background-color:red;
+color:white;
+padding:5px;
+}
+
+.hidden 
+{
+visibility:hidden;
+}
+
+.visible
+{
+visbility:visible:;
+}
+
+#result 
+{
+background-color:green;
+}

@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html>
+<head>
+<title>Avengers Character Search</title>
+</head>
+
 <body>
 
+<h1 id ="banner">AVENGERS CHARACTER SEARCH</h1>
 <script src = "app.js"></script>
-<button onclick = "SuperFunction()">Search</button>
+<link rel = "stylesheet" href = "styles.css">
+
+<form action = "superheroes.php" method = "get">
+<label for = "HeroSearch">Search by Full Name or Alias!</label><br>
+<input type = "text" id = "HeroSearch" name = "HeroSearch" placeholder = "e.g. Captain America or Steve Rogers">
+<button type = "submit" value = "Search"> Search </button>
+</form>
+
+<div id = "result"></div>
+
+<!-- (ORIGINAL BUTTON FOR ALERT OF HEROES) <button onclick = "SuperFunction()">Search</button> --!>
 
 </body>
 </html>
