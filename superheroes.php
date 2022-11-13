@@ -88,20 +88,23 @@ function sanitization($data)
     return $data;
 }
 
-if($_SERVER['REQUEST_METHOD'] == 'GET')
+
+if( (isset($_GET['set'])) )
 {
 
-    $UserInput = isset($_GET["HeroSearch"] ) ? $_GET["HeroSearch"]: '';
-    $searchQuery = sanitization($UserInput);
+    $UserInput = $_GET['set'];
+    $searchQuery = strtolower(sanitization($UserInput));
 
     if(empty($searchQuery))
 {
-        echo "<h1 style=color:blue>The Hero's</h1>";
+echo $searchQuery . "empty";
+        echo "<h1 style='color:blue; background-color:yellow;'>The Heroes</h1>";
         echo "<hr>";
         echo "<ul>";
-        foreach ($superheroes as $superhero){
+        foreach ($superheroes as $superhero)
+{
             echo "<li>" . $superhero['name'] . "</li>";
-        }
+}
         echo "</ul>";
     }
 
@@ -110,7 +113,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
         $found = false;
         foreach ($superheroes as $superhero)
 {
-            if( ($superhero['name'] == $searchQuery) || ($superhero['alias'] == $searchQuery) )
+            if( (strtolower($superhero['name']) == $searchQuery) || (strtolower($superhero['alias']) == $searchQuery) )
 {
                 $found = true;
 		    echo "<div id = 'result'>";
@@ -134,4 +137,5 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
 
     }}
 }
+
  ?>

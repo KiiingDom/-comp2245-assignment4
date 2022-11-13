@@ -29,10 +29,10 @@ visibility:hidden;
 
 .visible
 {
-visbility:visible:;
+visbility:visible;
 }
 
 #result 
 {
-background-color:green;
+background-color:magenta;
 }
