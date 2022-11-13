@@ -89,16 +89,16 @@ function sanitization($data)
 }
 
 
-if( (isset($_GET['set'])) )
+if( (isset($_GET['TheHero'])) )
 {
 
-    $UserInput = $_GET['set'];
+    $UserInput = $_GET['TheHero'];
     $searchQuery = strtolower(sanitization($UserInput));
 
     if(empty($searchQuery))
 {
-        echo "<h1 style='color:blue; background-color:yellow;'>The Heroes</h1>";
-        echo "<hr>";
+        echo "<h1 style='color:blue; background-color:yellow;'>Earth's Mightiest Heroes</h1>";
+      //  echo "<hr>";
         echo "<ul>";
         foreach ($superheroes as $superhero)
 {
@@ -116,8 +116,7 @@ if( (isset($_GET['set'])) )
 {
                 $found = true;
 		  
-                echo "<h1>RESULT</h1>";
-                echo "<hr>";
+               
                 echo "<h3>" . $superhero['alias'] . "</h3>";
                 echo "<h4> A.K.A. " . $superhero['name'] . "</h4>";
                 echo "<p>" . $superhero['biography'] . "</p>";
@@ -128,7 +127,6 @@ if( (isset($_GET['set'])) )
         if($found == false)
 {
 		echo "<div id = \result\>";
-            echo "<h1>RESULT</h1>";
             echo "<hr>";
             echo "<h4 style= 'font-size:25px; color: red; background-color : black;'>Sorry! Superhero not found</h4>";
 		echo "</div>";

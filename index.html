@@ -8,25 +8,28 @@
 <title>Avengers Character Search</title>
 </head>
 
-<main>
 <body>
 
+
+<header>
 <h1 id ="banner">AVENGERS CHARACTER SEARCH</h1>
+</header>
 
-
+<main>
 
 <label for = "HeroSearch">Search by Full Name or Alias!</label><br>
 <input type = "text" id = "HeroSearch" name = "HeroSearch" placeholder = "e.g. Captain America or Steve Rogers">
 <button tpye ="button" id = "search" value = "Search"> Search </button>
 
 
-<div> RESULTS:
+<div id ="result-holder" class ="hidden"> RESULTS:
 <div id = "result"></div>
 </div>
 
 <!-- (ORIGINAL BUTTON FOR ALERT OF HEROES) <button onclick = "SuperFunction()">Search</button> -->
 
 <script src = "app.js"></script>
-</body>
+
 </main>
+</body>
 </html>

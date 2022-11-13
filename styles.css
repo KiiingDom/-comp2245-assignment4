@@ -9,6 +9,7 @@ padding:5px;
 #banner 
 {  
 margin-top:0px;
+margin-bottom:15px;
 text-align: center;
 font-size:50px;
 background-color: deepskyblue;
@@ -21,6 +22,7 @@ button
 background-color:red;
 color:white;
 padding:5px;
+margin-bottom:10px;
 }
 
 .hidden 
@@ -35,5 +37,15 @@ visbility:visible;
 
 #result 
 {
-background-color:magenta;
+background-color:#FF4000;
+color:#000000;
+font-family: Helvetica;
+}
+
+#result-holder
+{
+background-color:#000000;
+color:#FFFFFF;
+text-align:center;
+
 }
