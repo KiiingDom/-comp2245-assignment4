@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', (event)=>{
 
 let MainIndex = "http://localhost/Web-Dev/Assignment%204/comp2245-assignment4/superheroes.php?set=";
 let theButton = document.getElementById("search");
-let Entry = document.getElementById("HeroSearch").value;
+let Entry = document.getElementById("HeroSearch");
 theButton.onclick = function() {SuperSearch()}
 
 
@@ -22,7 +22,7 @@ function SuperSearch()
 {
 
 
-fetch(MainIndex+Entry)
+fetch(MainIndex+Entry.value)
 .then(response => response.text())
 .then(data =>{
 let set = document.getElementById("result");

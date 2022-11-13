@@ -97,7 +97,6 @@ if( (isset($_GET['set'])) )
 
     if(empty($searchQuery))
 {
-echo $searchQuery . "empty";
         echo "<h1 style='color:blue; background-color:yellow;'>The Heroes</h1>";
         echo "<hr>";
         echo "<ul>";
@@ -116,14 +115,14 @@ echo $searchQuery . "empty";
             if( (strtolower($superhero['name']) == $searchQuery) || (strtolower($superhero['alias']) == $searchQuery) )
 {
                 $found = true;
-		    echo "<div id = 'result'>";
+		  
                 echo "<h1>RESULT</h1>";
                 echo "<hr>";
                 echo "<h3>" . $superhero['alias'] . "</h3>";
                 echo "<h4> A.K.A. " . $superhero['name'] . "</h4>";
                 echo "<p>" . $superhero['biography'] . "</p>";
                 break;
-		    echo "</div>";
+
             }
         }
         if($found == false)
